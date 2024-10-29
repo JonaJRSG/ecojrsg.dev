@@ -1,0 +1,31 @@
+---
+import Glass from "@/components/Glass.astro"
+import ArrowDownR from "@/components/icons/ArrowDownR.astro"
+
+import { getI18N } from "@/i18n/index"
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+
+<Glass hover={true} class="flex flex-col justify-between p-6 min-h-full h-min group">
+    <h3 class="font-satoshi font-bold text-xl">{i18n.About_Card.title}</h3>
+    <p class="font-satoshi text-sm">
+        {i18n.About_Card.intro}
+    </p>
+    <ul class="list-disc list-inside !font-satoshi py-1">
+        <li>JavaScrip</li>
+        <li>TypeScrip</li>
+        <li>Python</li>
+        <li>Astro</li>
+        <li>React</li>
+        <li>Node Js</li>
+    </ul>
+    <p class="font-satoshi text-sm">
+        {i18n.About_Card.more}
+    </p>
+    <div class="flex justify-end items-center content-center">
+        <p class="font-satoshi font-normal text-xs pr-2">{i18n.About_Card.btnMore}</p>
+        <ArrowDownR class="w-4 group-hover:translate-x-1 group-hover:translate-y-1 transition-all"/>
+    </div>
+</Glass>

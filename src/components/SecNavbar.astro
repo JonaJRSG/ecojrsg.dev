@@ -1,0 +1,36 @@
+---
+import Logo from "@/components/Logo.astro";
+import Link from "@/components/Link.astro";
+import Github from "@/components/icons/Github.astro";
+import Instagram from "@/components/icons/Instagram.astro";
+import Discord from "@/components/icons/Discord.astro";
+
+import { LINKS } from "@/lib/constants"
+---
+
+<div class:list={"bg-transparent p-5 px-40 min-w-full fixed"}>
+    <div class="flex justify-around">
+        <Link href="/">
+            <Logo class:list={"h-12"}/>
+        </Link>
+        <div class="flex justify-between items-center">
+            <Link href="/" class="px-2">
+                <span class="font-satoshi text-gray-300 hover:text-white transition-all">Blog</span>
+            </Link>
+            <Link href="/" class="px-2">
+                <span class="font-satoshi text-gray-300 hover:text-white transition-all">Repositorio</span>
+            </Link>
+        </div>
+        <div class="flex items-center gap-2">
+            <Link href={LINKS.github} blank={true}>
+                <Github class:list={"h-8 w-8"}/>
+            </Link>
+            <Link href={LINKS.instagram} blank={true}>
+                <Instagram class:list={"h-8 w-8"}/>
+            </Link>
+            <Link href={LINKS.discord} blank={true}>
+                    <Discord class:list={"h-8 w-8"}/>
+            </Link>
+        </div>
+    </div>
+</div>

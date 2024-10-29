@@ -1,0 +1,77 @@
+---
+import Discord from "@/components/icons/Discord.astro";
+import Logo from "@/components/Logo.astro";
+import Link from "@/components/Link.astro";
+import Instagram from "@/components/icons/Instagram.astro";
+import Github from "@/components/icons/Github.astro";
+
+import { LINKS } from "@/lib/constants";
+---
+
+<main>
+    <footer class="hidden lg:block mx-52">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center gap-2">
+                <Logo class="w-7 pb-1"/>
+                <p class="font-satoshi">Eco</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <Link href={LINKS.discord}>
+                    <Discord class="text-gray-300 hover:text-white"/>
+                </Link>
+                <Link href={LINKS.instagram}>
+                    <Instagram class="text-gray-300 hover:text-white"/>
+                </Link>
+                <Link href={LINKS.github}>
+                    <Github class="text-gray-300 hover:text-white"/>
+                </Link>
+            </div>
+        </div>
+        <hr class="opacity-50">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center gap-2">
+                <p class="font-satoshi">&copy; 2024 Jonathan Ricardo Serna Galina.</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <Link href="/terminos-y-condiciones">
+                    <p>Terminos y condiciones</p>
+                </Link>
+                <p>|</p>
+                <Link href="/politicas-de-uso">
+                    <p>Políticas de uso</p>
+                </Link>
+            </div>
+        </div>
+    </footer>
+    <footer class="lg:hidden mx-10">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center gap-2">
+                <Logo class="w-7 pb-1"/>
+                <p class="font-satoshi">Eco</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <Link href={LINKS.discord}>
+                    <Discord class="text-gray-300 hover:text-white"/>
+                </Link>
+                <Link href={LINKS.instagram}>
+                    <Instagram class="text-gray-300 hover:text-white"/>
+                </Link>
+                <Link href={LINKS.github}>
+                    <Github class="text-gray-300 hover:text-white"/>
+                </Link>
+            </div>
+        </div>
+        <hr class="opacity-50">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center gap-2">
+                <Link href="/terminos-y-condiciones">
+                    <p>Terminos y condiciones</p>
+                </Link>
+                <p>|</p>
+                <Link href="/politicas-de-uso">
+                    <p>Políticas de uso</p>
+                </Link>
+            </div>
+        </div>
+    </footer>
+</main>

@@ -1,0 +1,15 @@
+---
+type Props = {
+  class?: string
+  href: string
+  blank?: boolean
+}
+
+const {href, class: className, blank} = Astro.props
+
+const target = blank ? '_blank' : ""
+---
+
+<a href={href} class={className} target={target}>
+    <slot/>
+</a>

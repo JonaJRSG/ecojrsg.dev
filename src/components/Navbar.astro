@@ -1,0 +1,73 @@
+---
+import Logo from "@/components/Logo.astro"
+import Link from "@/components/Link.astro"
+import LanguageSelector from "@/components/LanguageSelector.astro"
+
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+type Props = {
+    class?: string 
+}
+
+const {class: className} = Astro.props
+---
+
+<main class=`${className} flex justify-center z-0`>
+    <div id="patron" class="p-4 hidden lg:block w-4/5">
+        <div class="flex justify-between items-center">
+            <div class="px-2">
+                <Link href="/">
+                    <Logo class="w-10"/>
+                </Link>
+            </div>
+            <div class=" flex justify-end items-center">
+                <Link href="#Inicio" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.home")}</span>
+                </Link>
+                <Link href="#SobreMi" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.about")}</span>
+                </Link>
+                <Link href="/" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.team")}</span>
+                </Link>
+                <Link href="/" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.skills")}</span>
+                </Link>
+                <Link href="/" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.contac")}</span>
+                </Link>
+                <p class="px-4">
+                    |
+                </p>
+                <Link href="/" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.blog")}</span>
+                </Link>
+                <Link href="/" class="px-2">
+                    <span class="font-satoshi text-gray-300 hover:text-white transition-all">{t("nav.repo")}</span>
+                </Link>
+                <p class="px-4">
+                    |
+                </p>
+                <LanguageSelector/>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    #patron {
+        background-color: transparent;
+        background-image: radial-gradient(transparent 1px, rgba(15, 17, 21, 1) 1px);
+        background-size: 4px 4px;
+        backdrop-filter: blur(3px);
+        opacity: 1;
+        border-bottom: 2px #542187;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        border-style: solid;
+    }
+</style>

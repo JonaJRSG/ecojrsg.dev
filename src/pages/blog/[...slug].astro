@@ -1,0 +1,18 @@
+---
+//@ts-nocheck
+import LayoutRepo from '@/layouts/LayoutRepo.astro';
+import { getCollection } from 'astro:content';
+// 1. Genera una nueva ruta para cada entrada de colección
+export async function getStaticPaths() {
+    const blogEntries = await getCollection('blog');
+    return blogEntries.map(entry => ({
+        params: { slug: entry.slug }, props: { entry },
+    }));
+}
+// 2. Para tu plantilla, puedes obtener la entrada directamente de la prop
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<LayoutRepo frontmatter={entry.data}>
+    <Content />
+</LayoutRepo>

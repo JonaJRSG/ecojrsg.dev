@@ -1,0 +1,11 @@
+---
+type Props = {
+    class?: string
+}
+
+const {class: className} = Astro.props
+---
+
+<div class=`flex flex-col prose ${className} prose-headings:text-white prose-p:text-white font-satoshi prose-blockquote:text-white prose-strong:text-Eco-100 prose:figure prose-code:text-white prose-img:m-auto min-w-full prose-a:text-Eco-100 prose-li:text-white`>
+    <slot/>
+</div>
