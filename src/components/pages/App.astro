@@ -5,10 +5,54 @@ import Navbar from "@/components/Navbar.astro";
 import IndexGrid from "@/components/cards/IndexGrid.astro";
 import LanguageSelector from "@/components/LanguageSelector.astro";
 import Logo from "@/components/Logo.astro";
-import GlobeComponent from "@/components/interactive/Globe";
 import About from "@/components/mainPage/About.astro";
 import Technology from "@/components/mainPage/Technology.astro";
+import Experience from "@/components/mainPage/Experience.astro";
 ---
+
+<script>
+  import { timeline, stagger, spring, inView, animate, type TimelineDefinition } from "motion"
+
+  const inAnimateR = document.querySelectorAll(".inAnimateR");
+  const inAnimateL = document.querySelectorAll(".inAnimateL");
+  const inAnimateB = document.querySelectorAll(".inAnimateB");
+
+  inView(inAnimateR, ({target}) => {
+      animate(target, 
+        { 
+          x: ["30%", "0%"], opacity: [0, 1] 
+        },
+        {
+          duration: 0.4,
+          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        },
+      )
+  });
+
+  inView(inAnimateL, ({target}) => {
+      animate(target, 
+        { 
+          x: ["-30%", "0%"], opacity: [0, 1] 
+        },
+        {
+          duration: 0.4,
+          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        },
+      )
+  });
+
+  inView(inAnimateB, ({target}) => {
+      animate(target, 
+        { 
+          y: ["60%", "0%"], opacity: [0, 1] 
+        },
+        {
+          duration: 0.4,
+          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        },
+      )
+  });
+</script>
 
 <Layout title="Eco_Page">
   <main>
@@ -27,12 +71,15 @@ import Technology from "@/components/mainPage/Technology.astro";
         <IndexGrid/>
       </div>
     </PattternBG>
-    <div class="pt-20 p-12 2xl:px-64">
+    <div class="flex flex-col pt-20 p-12 2xl:px-64 gap-40">
       <div class="flex justify-center relative">
         <About/>
       </div>
-      <div>
+      <div class="inAnimateB">
         <Technology/>
+      </div>
+      <div>
+        <Experience />
       </div>
     </div>
   </main>
