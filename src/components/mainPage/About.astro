@@ -9,7 +9,7 @@ import CPU from "@/components/icons/CPU.astro"
 
 <main>
     <div class="hidden grid-cols-5 gap-10 items-center lg:grid">
-        <div class="subContainers col-span-3 max-h-96 inAnimateL">
+        <div class="flex flex-col gap-2 col-span-3 max-h-96  inAnimateL">
             <Glass class="p-4 font-satoshi flex flex-col gap-4">
                 <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span>Soy Eco<span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
                 <p class="text-5xl">
@@ -30,12 +30,17 @@ import CPU from "@/components/icons/CPU.astro"
                     </Button>
                 </div>
             </Glass>
+            <div>
+                <Button hover={false}>
+                    <span>Descarga mi cv</span>
+                </Button>
+            </div>
         </div>
-        <div class="subContainers col-span-2 flex justify-center inAnimateR">
+        <div class="col-span-2 flex justify-center inAnimateR">
             <Logo class="h-96"/>
         </div>
     </div>
-    <div class="block lg:hidden">
+    <div class="flex flex-col gap-2 lg:hidden">
         <Glass class="p-4 font-satoshi flex flex-col gap-4">
             <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span>Soy Eco<span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
             <p class="text-5xl">
@@ -56,5 +61,10 @@ import CPU from "@/components/icons/CPU.astro"
                 </Button>
             </div>
         </Glass>
+        <div>
+            <Button hover={false}>
+                <span>Descarga mi cv</span>
+            </Button>
+        </div>
     </div>
 </main>
