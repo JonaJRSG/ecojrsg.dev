@@ -1,0 +1,74 @@
+---
+import GlobeComponent from "@/components/interactive/Globe";
+import Glass from "@/components/Glass.astro";
+---
+<script>
+    import {animate, inView} from "motion"
+    const paises = document.querySelector(".paises")
+    const universidades = document.querySelector(".universidades")
+    const clientes = document.querySelector(".clientes")
+
+    // @ts-ignore
+    inView(paises, ({target}) => {
+        setTimeout(() => {
+            animate(
+                // @ts-ignore
+                (progress) => target.innerHTML = Math.round(progress * 9),
+                { duration: 1, easing: "ease-out" }
+            )
+        }, 2000)
+    })
+
+    // @ts-ignore
+    inView(universidades, ({target}) => {
+        setTimeout(() => {
+            animate(
+                // @ts-ignore
+                (progress) => target.innerHTML = Math.round(progress * 5),
+                { duration: 1, easing: "ease-out" }
+            )
+        }, 2500)
+    })
+
+    // @ts-ignore
+    inView(clientes, ({target}) => {
+        setTimeout(() => {
+            animate(
+                // @ts-ignore
+                (progress) => target.innerHTML = Math.round(progress * 113),
+                { duration: 2, easing: "ease-out" }
+            )
+        }, 3000)
+    })
+</script>
+
+<main>
+    <div class="grid grid-cols-1 2xl:grid-cols-2 font-satoshi">
+        <div class="hidden 2xl:block inAnimateL">
+            <GlobeComponent client:load/>
+        </div>
+        <div class="flex flex-col text-center justify-around lg:h-[500px] inAnimateR">
+            <h1 class="text-5xl">Mi experiencia</h1>
+            <div class="flex justify-center gap-8">
+                <div class="w-28 pt-6 lg:pt-0">
+                    <Glass class="p-3 text-3xl paises">0</Glass>
+                    <p>Paises</p>
+                </div>
+                <div class="w-28 pt-6 lg:pt-0">
+                    <Glass class="p-3 text-3xl universidades">0</Glass>
+                    <p>Universidades</p>
+                </div>
+                <div class="w-28 pt-6 pb-6 lg:p-0">
+                    <Glass class="p-3 text-3xl clientes">0</Glass>
+                    <p>Clientes</p>
+                </div>
+            </div>
+            <div>
+                A lo largo de mi trayectoria profesional, he tenido la oportunidad de explorar diversas culturas y sistemas educativos en varios países, lo que ha enriquecido profundamente mi perspectiva. Mi formación incluye estudios en la Universidad de Sevilla en España y en el Deggendorf Institute of Technology en Alemania, donde cursé asignaturas avanzadas en áreas como algoritmos de inteligencia artificial y diseño de interfaces de usuario responsivas y accesibles.
+                <br>
+                <br>
+                Este valioso conocimiento me ha permitido desarrollar proyectos innovadores y formular soluciones efectivas para los desafíos que enfrento tanto en mi entorno laboral como en mis iniciativas personales. Estoy comprometido con la mejora continua y la aplicación de mis habilidades para generar un impacto positivo en cada tarea que realizo. 
+            </div>
+        </div>
+    </div>
+</main>

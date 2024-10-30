@@ -2,7 +2,7 @@ import { onMount } from "solid-js";
 import * as d3 from "d3";
 import worldData from "@/lib/world.json";
 
-const GlobeComponent = () => {
+const GlobeComponent = ({scale = 250}) => {
   let mapContainer: HTMLDivElement | undefined;
 
   const visitedCountries = [
@@ -27,7 +27,7 @@ const GlobeComponent = () => {
 
     let projection = d3
       .geoOrthographic()
-      .scale(250)
+      .scale(scale)
       .center([0, 0])
       .rotate([0, -30])
       .translate([width / 2, height / 2]);

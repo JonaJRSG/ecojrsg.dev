@@ -1,0 +1,19 @@
+---
+import Slider from "@/components/Slider.astro"
+import { LINKS } from "@/lib/constants";
+---
+
+<div class="flex flex-col items-center font-satoshi gap-12">
+    <h1 class="text-5xl">Tecnologias</h1>
+    <div class="max-w-full">
+        <Slider class="max-w-screen"/>
+    </div>
+    <div class="text-center">
+        <p>
+            Con conocimiento en muchos lenguajes y tecnoligas. Te invito a conocerlas todas en mi <a href={LINKS.github} target="_blank"><span class="text-Eco-100">Github</span></a>
+        </p>
+        <p>
+            o contactame para conocer todo de lo que soy capaz 👍
+        </p>
+    </div>
+</div>

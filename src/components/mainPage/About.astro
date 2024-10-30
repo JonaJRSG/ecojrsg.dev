@@ -1,1 +1,70 @@
-<h1>About</h1>
+---
+import Glass from "@/components/Glass.astro"
+import Logo from "@/components/Logo.astro"
+import Button from "@/components/Button.astro"
+import Keyboard from "@/components/icons/Keyboard.astro"
+import AI from "@/components/icons/AI.astro"
+import CPU from "@/components/icons/CPU.astro"
+---
+
+<main>
+    <div class="hidden grid-cols-5 gap-10 items-center lg:grid">
+        <div class="flex flex-col gap-2 col-span-3 max-h-96  inAnimateL">
+            <Glass class="p-4 font-satoshi flex flex-col gap-4">
+                <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span>Soy Eco<span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
+                <p class="text-5xl">
+                    Ingeniero de <span class="text-Eco-100">&#123;Software&#125;</span> con experiencia en el desarrollo Web
+                </p>
+                <p>
+                    <span class="text-Eco-100">&lt;p&gt;</span>Ademas de contar con experiencia en areas de la informatica como <span class="text-Eco-100">IA</span>, <span class="text-Eco-100">Hardware</span>, <span class="text-Eco-100">Edicion</span> y como secreto <span class="text-Eco-100">Teclados</span>, me gustan mucho los teclados<span class="text-Eco-100">&lt;/p&gt;</span>
+                </p>
+                <div class="flex justify-around px-24">
+                    <Button>
+                        <AI class="w-20 h-16"/>
+                    </Button>
+                    <Button>
+                        <CPU class="w-20 h-16"/>
+                    </Button>
+                    <Button>
+                        <Keyboard class="w-20 h-16"/>
+                    </Button>
+                </div>
+            </Glass>
+            <div>
+                <Button hover={false}>
+                    <span>Descarga mi cv</span>
+                </Button>
+            </div>
+        </div>
+        <div class="col-span-2 flex justify-center inAnimateR">
+            <Logo class="h-96"/>
+        </div>
+    </div>
+    <div class="flex flex-col gap-2 lg:hidden">
+        <Glass class="p-4 font-satoshi flex flex-col gap-4">
+            <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span>Soy Eco<span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
+            <p class="text-5xl">
+                Ingeniero de <span class="text-Eco-100">&#123;Software&#125;</span> con experiencia en el desarrollo Web
+            </p>
+            <p>
+                <span class="text-Eco-100">&lt;p&gt;</span>Ademas de contar con experiencia en areas de la informatica como <span class="text-Eco-100">IA</span>, <span class="text-Eco-100">Hardware</span>, <span class="text-Eco-100">Edicion</span> y como secreto <span class="text-Eco-100">Teclados</span>, me gustan mucho los teclados<span class="text-Eco-100">&lt;/p&gt;</span>
+            </p>
+            <div class="flex justify-around">
+                <Button>
+                    <AI class="w-10 h-6"/>
+                </Button>
+                <Button>
+                    <CPU class="w-10 h-6"/>
+                </Button>
+                <Button>
+                    <Keyboard class="w-10 h-6"/>
+                </Button>
+            </div>
+        </Glass>
+        <div>
+            <Button hover={false}>
+                <span>Descarga mi cv</span>
+            </Button>
+        </div>
+    </div>
+</main>
