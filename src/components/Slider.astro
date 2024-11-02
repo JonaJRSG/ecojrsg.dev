@@ -1,133 +1,81 @@
 ---
 ---
 
-<main>
-    <div class="overflow-hidden pt-2" style="mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)">
-        <div class="slide-track flex animate-slide w-calc-slider">
-            <div class="slide w-[100px]">
-                <img src="/logos/Astro.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Js.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Ts.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Node.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Python.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Sql.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/React.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/NestJS.svg" alt="" class="w-14">
-            </div>
-
-            <div class="slide w-[100px]">
-                <img src="/logos/Astro.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Js.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Ts.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Node.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Python.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Sql.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/React.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/NestJS.svg" alt="" class="w-14">
-            </div>
-
-            <div class="slide w-[100px]">
-                <img src="/logos/Astro.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Js.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Ts.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Node.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Python.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Sql.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/React.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/NestJS.svg" alt="" class="w-14">
-            </div>
-
-            <div class="slide w-[100px]">
-                <img src="/logos/Astro.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Js.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Ts.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Node.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Python.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Sql.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/React.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/NestJS.svg" alt="" class="w-14">
-            </div>
-
-            <div class="slide w-[100px]">
-                <img src="/logos/Astro.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Js.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Ts.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Node.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Python.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/Sql.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/React.svg" alt="" class="w-14">
-            </div>
-            <div class="slide w-[100px]">
-                <img src="/logos/NestJS.svg" alt="" class="w-14">
-            </div>
-        </div>
+<main id="my-slider" class="splide my-slider">
+    <div class="overflow-hidden pt-2 splide__track" style="mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)">
+        <ul class="splide__list flex">
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/Astro.svg" alt="Image 1" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/Js.svg" alt="Image 2" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/NestJS.svg" alt="Image 3" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/Node.svg" alt="Image 1" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/Python.svg" alt="Image 2" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/React.svg" alt="Image 3" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/Sql.svg" alt="Image 1" class="w-14">
+            </li>
+            <li class="splide__slide flex justify-center items-center">
+                <img src="/logos/Ts.svg" alt="Image 2" class="w-14">
+            </li>
+        </ul>
     </div>
 </main>
+
+<script>
+    import '@splidejs/splide/css';
+    import Splide from '@splidejs/splide';
+    import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+
+    let sliders = document.querySelectorAll('.my-slider')
+
+    const perPage = [
+        {
+            perPage: 6,
+            perPage1024: 6,
+            perPage768: 6
+        },
+        {
+            perPage: 16,
+            perPage1024: 10,
+            perPage768: 6
+        }
+    ]
+    let numberS = 0
+
+    sliders.forEach(slider => {
+        //@ts-ignore
+        new Splide(slider, {
+            type: 'loop',
+            drag: 'free',
+            focus: 'center',
+            arrows: false,
+            pagination: false,
+            perPage: perPage[numberS].perPage,
+            autoScroll: {
+                speed: 0.7,
+                pauseOnHover: false
+            },
+            breakpoints: {
+                1024: {
+                    perPage: perPage[numberS].perPage1024,
+                },
+                768: {
+                    perPage: perPage[numberS].perPage768
+                }
+            }
+        }).mount({AutoScroll});
+
+        numberS += 1
+    });
+</script>

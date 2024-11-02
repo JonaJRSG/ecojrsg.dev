@@ -11,12 +11,12 @@ import CPU from "@/components/icons/CPU.astro"
     <div class="hidden grid-cols-5 gap-10 items-center lg:grid">
         <div class="flex flex-col gap-2 col-span-3 max-h-96  inAnimateL">
             <Glass class="p-4 font-satoshi flex flex-col gap-4">
-                <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span>Soy Eco<span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
+                <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span><span id="type"></span><span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
                 <p class="text-5xl">
                     Ingeniero de <span class="text-Eco-100">&#123;Software&#125;</span> con experiencia en el desarrollo Web
                 </p>
-                <p>
-                    <span class="text-Eco-100">&lt;p&gt;</span>Ademas de contar con experiencia en areas de la informatica como <span class="text-Eco-100">IA</span>, <span class="text-Eco-100">Hardware</span>, <span class="text-Eco-100">Edicion</span> y como secreto <span class="text-Eco-100">Teclados</span>, me gustan mucho los teclados<span class="text-Eco-100">&lt;/p&gt;</span>
+                <p class="text-base">
+                    <span class="text-Eco-100 text-lg">&lt;p&gt;</span>Ademas de contar con experiencia en areas de la informatica como <span class="text-Eco-100">IA</span>, <span class="text-Eco-100">Hardware</span>, <span class="text-Eco-100">Edicion</span> y como secreto <span class="text-Eco-100">Teclados</span>, me gustan mucho los teclados<span class="text-Eco-100 text-lg">&lt;/p&gt;</span>
                 </p>
                 <div class="flex justify-around px-24">
                     <Button>
@@ -42,11 +42,11 @@ import CPU from "@/components/icons/CPU.astro"
     </div>
     <div class="flex flex-col gap-2 lg:hidden inAnimateL">
         <Glass class="p-4 font-satoshi flex flex-col gap-4">
-            <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span>Soy Eco<span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
+            <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span><span id="typeR"></span><span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
             <p class="text-5xl">
                 Ingeniero de <span class="text-Eco-100">&#123;Software&#125;</span> con experiencia en el desarrollo Web
             </p>
-            <p>
+            <p class="text-xl">
                 <span class="text-Eco-100">&lt;p&gt;</span>Ademas de contar con experiencia en areas de la informatica como <span class="text-Eco-100">IA</span>, <span class="text-Eco-100">Hardware</span>, <span class="text-Eco-100">Edicion</span> y como secreto <span class="text-Eco-100">Teclados</span>, me gustan mucho los teclados<span class="text-Eco-100">&lt;/p&gt;</span>
             </p>
             <div class="flex justify-around">
@@ -68,3 +68,36 @@ import CPU from "@/components/icons/CPU.astro"
         </div>
     </div>
 </main>
+
+<script>
+    import { inView } from "motion";
+    import TypeIt from "typeit"
+
+    inView("#type", ({target}) => {
+        //@ts-ignore
+        new TypeIt(target, {
+            startDelay:1000
+        })
+        .type("Soy eco", {delay: 300})
+        .move(-2, {delay: 100})
+        .delete(1)
+        .type("E")
+        .move(null, {to: "END", delay: 1000})
+        .type("👍")
+        .go()
+    })
+
+    inView("#typeR", ({target}) => {
+        //@ts-ignore
+        new TypeIt(target, {
+            startDelay:1000
+        })
+        .type("Soy eco", {delay: 300})
+        .move(-2, {delay: 100})
+        .delete(1)
+        .type("E")
+        .move(null, {to: "END", delay: 1000})
+        .type("👍")
+        .go()
+    })
+</script>
