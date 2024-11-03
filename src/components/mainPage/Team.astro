@@ -8,12 +8,39 @@ import Yari from "@/components/icons/Yari.astro"
 import Sebas from "@/components/icons/Sebas.astro"
 ---
 
-<section class="font-satoshi h-80">
-    <section id="splide-Team" class="splide" aria-label="Basic Structure Example">
+<section class="flex flex-col gap-6 font-satoshi" >
+    <div class="flex justify-center inAnimateB">
+        <h1 class="text-5xl">Mi equipo</h1>
+    </div>
+    <section id="splide-Team" class="splide" style="mask-image: linear-gradient(to top, transparent 0%, black 20%, black 80%, transparent 100%)" aria-label="Basic Structure Example">
         <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide grid grid-cols-2 p-2">
-                    <Glass class="p-8 pb-0 relative flex flex-col justify-between overflow-hidden" hover={true}>
+            <ul class="splide__list flex justify-center">
+                <li class="splide__slide grid grid-cols-2 p-2 max-h-[350px]">
+                    <Glass class="inAnimateL p-8 pb-0 relative flex flex-col justify-between overflow-hidden" hover={true}>
+                        <h1 class="text-2xl">Yari</h1>
+                        <p>Editor de video con mas de 5 años de experiencia en el area, ha creado y organizado areas de edicon completas para su optima produccion</p>
+                        <ul>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Editor de video</li>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Director general de areas de edicion</li>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Gestor empresarial de alto nivel</li>
+                        </ul>
+                        <div>
+                            <Link href="">
+                                <Button>
+                                    <Instagram/>
+                                </Button>
+                            </Link>
+                        </div>
+                        <div>
+                            <img class="w-40 -rotate-45 absolute -bottom-6 -right-6 opacity-50" src="/img/dev/PremiereLogo.png" alt="premiere">
+                        </div>
+                    </Glass>
+                    <div class="inAnimateR flex justify-center items-center">
+                        <Yari class="w-80"/>
+                    </div>
+                </li>
+                <li class="splide__slide grid grid-cols-2 p-2 max-h-[350px]">
+                    <Glass class="inAnimateL p-8 pb-0 relative flex flex-col justify-between overflow-hidden" hover={true}>
                         <h1 class="text-2xl">Emilio Sotomayor</h1>
                         <p>Editor de video con mas de 5 años de experiencia en el area, ha creado y organizado areas de edicon completas para su optima produccion</p>
                         <ul>
@@ -32,15 +59,33 @@ import Sebas from "@/components/icons/Sebas.astro"
                             <img class="w-40 -rotate-45 absolute -bottom-6 -right-6 opacity-50" src="/img/dev/PremiereLogo.png" alt="premiere">
                         </div>
                     </Glass>
-                    <div class="flex justify-center items-center">
+                    <div class="inAnimateR flex justify-center items-center">
                         <Emilio class="w-96"/>
                     </div>
                 </li>
-                <li class="splide__slide flex justify-center items-center">
-                    <Yari class="w-80"/>
-                </li>
-                <li class="splide__slide flex justify-center items-center">
-                    <Sebas class="w-48"/>
+                <li class="splide__slide grid grid-cols-2 p-2 max-h-[350px]">
+                    <Glass class="inAnimateL p-8 pb-0 relative flex flex-col justify-between overflow-hidden" hover={true}>
+                        <h1 class="text-2xl">Emilio Sotomayor</h1>
+                        <p>Editor de video con mas de 5 años de experiencia en el area, ha creado y organizado areas de edicon completas para su optima produccion</p>
+                        <ul>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Editor de video</li>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Director general de areas de edicion</li>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Gestor empresarial de alto nivel</li>
+                        </ul>
+                        <div>
+                            <Link href="">
+                                <Button>
+                                    <Instagram/>
+                                </Button>
+                            </Link>
+                        </div>
+                        <div>
+                            <img class="w-40 -rotate-45 absolute -bottom-6 -right-6 opacity-50" src="/img/dev/PremiereLogo.png" alt="premiere">
+                        </div>
+                    </Glass>
+                    <div class="inAnimateR flex justify-center items-center">
+                        <Sebas class="w-52"/>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -54,7 +99,9 @@ import Sebas from "@/components/icons/Sebas.astro"
         autoplay: true,
         arrows: false,
         direction: 'ttb',
-        height   : '350px',
+        gap: 100,
+        focus: "center",
+        height   : '450px',
     } ).mount();
 
     splide.on('moved', (newIndex) => {
