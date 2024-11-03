@@ -1,0 +1,64 @@
+---
+import Glass from "@/components/Glass.astro"
+import Instagram from "@/components/icons/Instagram.astro"
+import Link from "@/components/Link.astro"
+import Button from "@/components/Button.astro"
+import Emilio from "@/components/icons/Emilio.astro"
+import Yari from "@/components/icons/Yari.astro"
+import Sebas from "@/components/icons/Sebas.astro"
+---
+
+<section class="font-satoshi h-80">
+    <section id="splide-Team" class="splide" aria-label="Basic Structure Example">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide grid grid-cols-2 p-2">
+                    <Glass class="p-8 pb-0 relative flex flex-col justify-between overflow-hidden" hover={true}>
+                        <h1 class="text-2xl">Emilio Sotomayor</h1>
+                        <p>Editor de video con mas de 5 años de experiencia en el area, ha creado y organizado areas de edicon completas para su optima produccion</p>
+                        <ul>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Editor de video</li>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Director general de areas de edicion</li>
+                            <li class="before:content-['→'] before:mr-2 text-Eco-100">Gestor empresarial de alto nivel</li>
+                        </ul>
+                        <div>
+                            <Link href="">
+                                <Button>
+                                    <Instagram/>
+                                </Button>
+                            </Link>
+                        </div>
+                        <div>
+                            <img class="w-40 -rotate-45 absolute -bottom-6 -right-6 opacity-50" src="/img/dev/PremiereLogo.png" alt="premiere">
+                        </div>
+                    </Glass>
+                    <div class="flex justify-center items-center">
+                        <Emilio class="w-96"/>
+                    </div>
+                </li>
+                <li class="splide__slide flex justify-center items-center">
+                    <Yari class="w-80"/>
+                </li>
+                <li class="splide__slide flex justify-center items-center">
+                    <Sebas class="w-48"/>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+
+<script>
+    import Splide from "@splidejs/splide";
+    const splide = new Splide( '#splide-Team', {
+        type: 'loop',
+        autoplay: true,
+        arrows: false,
+        direction: 'ttb',
+        height   : '350px',
+    } ).mount();
+
+    splide.on('moved', (newIndex) => {
+        console.log(`El slider se ha movido al elemento con índice: ${newIndex}`);
+        // Puedes hacer más cosas aquí, como actualizar el contenido o aplicar efectos.
+    });
+</script>
