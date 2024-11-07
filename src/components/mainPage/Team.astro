@@ -94,18 +94,18 @@ import Sebas from "@/components/icons/Sebas.astro"
 
 <script>
     import Splide from "@splidejs/splide";
+    import { inView } from "motion";
+
     const splide = new Splide( '#splide-Team', {
         type: 'loop',
-        autoplay: true,
         arrows: false,
         direction: 'ttb',
         gap: 100,
         focus: "center",
-        height   : '450px',
+        height: '450px',
     } ).mount();
 
-    splide.on('moved', (newIndex) => {
-        console.log(`El slider se ha movido al elemento con índice: ${newIndex}`);
-        // Puedes hacer más cosas aquí, como actualizar el contenido o aplicar efectos.
-    });
+    inView(".splide", () => {
+        splide.Components.Autoplay.play();
+    })
 </script>
