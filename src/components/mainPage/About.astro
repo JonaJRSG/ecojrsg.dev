@@ -36,11 +36,11 @@ import CPU from "@/components/icons/CPU.astro"
                 </Button>
             </div>
         </div>
-        <div class="col-span-2 flex justify-center inAnimateR">
+        <div class="col-span-2 flex justify-center inAnimateR opacity-0">
             <Logo class="h-96"/>
         </div>
     </div>
-    <div class="flex flex-col gap-2 lg:hidden inAnimateL">
+    <div class="flex flex-col gap-2 lg:hidden inAnimateL opacity-0">
         <Glass class="p-4 font-satoshi flex flex-col gap-4">
             <h1 class="text-xl"><span class="text-lg text-Eco-100">&lt;span&gt;</span><span id="typeR"></span><span class="text-lg text-Eco-100">&lt;/span&gt;</span></h1>
             <p class="text-5xl">
@@ -73,9 +73,9 @@ import CPU from "@/components/icons/CPU.astro"
     import { inView } from "motion";
     import TypeIt from "typeit"
 
-    inView("#type", ({target}) => {
+    inView("#type", (element) => {
         //@ts-ignore
-        new TypeIt(target, {
+        new TypeIt(element, {
             startDelay:1000
         })
         .type("Soy eco", {delay: 300})
@@ -87,9 +87,9 @@ import CPU from "@/components/icons/CPU.astro"
         .go()
     })
 
-    inView("#typeR", ({target}) => {
+    inView("#typeR", (element) => {
         //@ts-ignore
-        new TypeIt(target, {
+        new TypeIt(element, {
             startDelay:1000
         })
         .type("Soy eco", {delay: 300})
