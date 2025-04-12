@@ -1,81 +1,70 @@
 ---
 ---
 
-<main id="my-slider" class="splide my-slider">
-    <div class="overflow-hidden pt-2 splide__track" style="mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)">
-        <ul class="splide__list flex">
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/Astro.svg" alt="Astro logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/Js.svg" alt="JavaScript logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/NestJS.svg" alt="NestJs logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/Node.svg" alt="Node logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/Python.svg" alt="Python logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/React.svg" alt="React logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/Sql.svg" alt="Sql logo" class="w-14">
-            </li>
-            <li class="splide__slide flex justify-center items-center">
-                <img src="/logos/Ts.svg" alt="Ts logo" class="w-14">
-            </li>
-        </ul>
+<!-- Slider main container -->
+<div class="swiper" style="mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/Astro.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/Js.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/Ts.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/Node.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/Python.svg" alt="" class="w-14 h-20">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/Sql.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/React.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="flex justify-center">
+                <img src="/logos/NestJS.svg" alt="" class="w-14 h-16">
+            </div>
+        </div>
     </div>
-</main>
+</div>
+
 
 <script>
-    import '@splidejs/splide/css';
-    import Splide from '@splidejs/splide';
-    import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
+    // import Swiper JS
+    import Swiper from 'swiper';
+    // import Swiper styles
+    import 'swiper/css';
 
-    let sliders = document.querySelectorAll('.my-slider')
-
-    const perPage = [
-        {
-            perPage: 6,
-            perPage1024: 6,
-            perPage768: 6
+    const swiper  = new Swiper('.swiper', {
+        slidesPerView: 5,
+        loop: true,
+        speed: 600,
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2000, // Tiempo en milisegundos entre cada slide (2 segundos)
+            disableOnInteraction: false, // Mantener el autoplay incluso si el usuario interactúa
         },
-        {
-            perPage: 16,
-            perPage1024: 10,
-            perPage768: 5
-        }
-    ]
-    let numberS = 0
-
-    sliders.forEach(slider => {
-        //@ts-ignore
-        new Splide(slider, {
-            type: 'loop',
-            drag: 'free',
-            focus: 'center',
-            arrows: false,
-            pagination: false,
-            perPage: perPage[numberS].perPage,
-            autoScroll: {
-                speed: 0.7,
-                pauseOnHover: false
-            },
-            breakpoints: {
-                1024: {
-                    perPage: perPage[numberS].perPage1024,
-                },
-                768: {
-                    perPage: perPage[numberS].perPage768
-                }
-            }
-        }).mount({AutoScroll});
-
-        numberS += 1
+        direction: 'horizontal', // Establecer dirección de desplazamiento vertical (puedes poner 'horizontal' si prefieres)
     });
 </script>
