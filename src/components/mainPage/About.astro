@@ -73,9 +73,9 @@ import CPU from "@/components/icons/CPU.astro"
     import { inView } from "motion";
     import TypeIt from "typeit"
 
-    inView("#type", (element) => {
+    inView("#type", ({target}) => {
         //@ts-ignore
-        new TypeIt(element, {
+        new TypeIt(target, {
             startDelay:1000
         })
         .type("Soy eco", {delay: 300})
@@ -87,9 +87,9 @@ import CPU from "@/components/icons/CPU.astro"
         .go()
     })
 
-    inView("#typeR", (element) => {
+    inView("#typeR", ({target}) => {
         //@ts-ignore
-        new TypeIt(element, {
+        new TypeIt(target, {
             startDelay:1000
         })
         .type("Soy eco", {delay: 300})
