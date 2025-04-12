@@ -12,49 +12,49 @@ import Team from "@/components/mainPage/Team.astro"
 ---
 
 <script>
-  import { delay, inView, animate } from "motion"
+  import { spring, inView, animate } from "motion"
 
   const inAnimateR = document.querySelectorAll(".inAnimateR");
   const inAnimateL = document.querySelectorAll(".inAnimateL");
   const inAnimateB = document.querySelectorAll(".inAnimateB");
 
-  inView(inAnimateR, (element) => {
-    delay(() => {
-      animate(element, 
-      // @ts-ignore
-        { opacity: [0, 1], x: [200, 0] },
+  inView(inAnimateR, ({target}) => {
+      animate(target, 
+        { 
+          x: ["30%", "0%"], opacity: [0, 1]
+        },
         {
-          duration: 0.7,
-          easing: [0.17, 0.55, 0.55, 1],
-        }
+          duration: 0.4,
+          delay: 0.3,
+          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        },
       )
-    }, 0.3)
   });
 
-  inView(inAnimateL, (element) => {
-    delay(() => {
-      animate(element, 
-      // @ts-ignore
-        { opacity: [0, 1], x: [-100, 0] },
+  inView(inAnimateL, ({target}) => {
+      animate(target, 
+        { 
+          x: ["-30%", "0%"], opacity: [0, 1]
+        },
         {
-          duration: 0.6,
-          easing: [0.17, 0.55, 0.55, 1],
-        }
-      );
-  }, 0.3);
+          duration: 0.4,
+          delay: 0.3,
+          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        },
+      )
   });
 
-  inView(inAnimateB, (element) => {
-    delay(() => {
-    animate(element, 
-    // @ts-ignore
-      { opacity: [0, 1], y: [100, 0] },
-      {
-        duration: 0.6,
-        easing: [0.17, 0.55, 0.55, 1],
-      }
-    );
-  }, 0.3);
+  inView(inAnimateB, ({target}) => {
+      animate(target, 
+        { 
+          y: ["60%", "0%"], opacity: [0, 1]
+        },
+        {
+          duration: 0.4,
+          delay: 0.3,
+          easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
+        },
+      )
   });
 </script>
 

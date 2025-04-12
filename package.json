@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -21,7 +21,7 @@
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "astro": "^5.6.1",
     "d3": "^7.9.0",
-    "motion": "^12.6.5",
+    "motion": "^10.18.0",
     "solid-js": "^1.9.5",
     "swiper": "^11.2.6",
     "tailwindcss": "3.4.17",
