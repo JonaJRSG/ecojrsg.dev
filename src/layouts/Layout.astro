@@ -5,13 +5,11 @@ import Footer from '@/components/Footer.astro';
 type Props = {
   title: string;
   description?: string;
-  blog?: boolean
 }
 
-const { title, description, blog } = Astro.props;
+const { title, description} = Astro.props;
+// Checar el image para el OG
 const image = `${Astro.url.origin}/img/dev/og-image.png`;
-
-const itsBlog = blog == undefined ? false : true
 
 /* 
   Comprobamos que estamos obteniendo 'description' como prop, si no regresamos la descripcion main.
@@ -21,22 +19,18 @@ const itsBlog = blog == undefined ? false : true
   However, we also verify that if we return 'description' as a prop, it exists in 'Des'.
 */
 let description_meta: string | undefined
-if (!itsBlog) {
-  description_meta = !description ? Des.main : !Des[description] ? Des.main : Des[description]
-} else {
-  description_meta = description
-}
+description_meta = !description ? Des.main : ""
 
 const schema = {
   "@context": "http://schema.org",
   "@type": "Person",
   name: "Jonathan Serna",
-  url: "https://ecojrsg.github.io",
+  url: "https://ecojrsg.dev",
   sameAs: [
     "https://www.instagram.com/eco_jrsg/",
-    "https://github.com/ecojrsg",
+    "https://github.com/JonaJRSG",
   ],
-  image: "https://github.com/ecojrsg/img/dev/og-image.png",
+  image: "https://ecojrsg.dev/img/dev/og-image.png",
   jobTitle: "Software Engineering Student",
   nationality: {
     "@type": "Country",
@@ -56,12 +50,12 @@ const { currentLocale } = Astro
     <meta name="generator" content={Astro.generator} />
     <!-- Basic OG tags for sharing your website's content on platforms like Facebook and LinkedIn -->
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={description_meta} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.origin} />
     <meta
       property="og:image"
-      content={image || "https://github.com/ecojrsg/img/dev/og-image.png"}
+      content={image || "https://ecojrsg.dev/img/dev/og-image.png"}
     />
     <!-- Basic Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -69,14 +63,12 @@ const { currentLocale } = Astro
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
-      content={image || "https://github.com/ecojrsg/img/dev/og-image.png"}
+      content={image || "https://ecojrsg.dev/img/dev/og-image.png"}
     />
     <!-- More -->
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
     <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="icon" type="image/svg+xml" href="/LOGO.svg">
-
-    <!-- Slider -->
 
     <title>{title}</title>
   </head>

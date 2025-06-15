@@ -1,9 +1,9 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import mdx from '@astrojs/mdx';
+import mdx from "@astrojs/mdx";
 import solidJs from "@astrojs/solid-js";
 
-const site = "https://ecojrsg.github.io";
+const site = "https://ecojrsg.dev";
 
 // https://astro.build/config
 export default defineConfig({
