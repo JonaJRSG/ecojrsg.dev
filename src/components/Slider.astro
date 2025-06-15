@@ -48,23 +48,18 @@
     </div>
 </div>
 
-
 <script>
     // import Swiper JS
     import Swiper from 'swiper';
     // import Swiper styles
     import 'swiper/css';
 
-    const swiper  = new Swiper('.swiper', {
+    new Swiper('.swiper', {
         slidesPerView: 5,
         loop: true,
-        speed: 600,
-        spaceBetween: 0,
         centeredSlides: true,
         autoplay: {
-            delay: 2000, // Tiempo en milisegundos entre cada slide (2 segundos)
-            disableOnInteraction: false, // Mantener el autoplay incluso si el usuario interactúa
+            delay: 2500,
         },
-        direction: 'horizontal', // Establecer dirección de desplazamiento vertical (puedes poner 'horizontal' si prefieres)
     });
 </script>

@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import { Des } from '@/lib/constants';
 import Footer from '@/components/Footer.astro';
 
@@ -76,6 +75,9 @@ const { currentLocale } = Astro
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
     <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="icon" type="image/svg+xml" href="/LOGO.svg">
+
+    <!-- Slider -->
+
     <title>{title}</title>
   </head>
   <body>

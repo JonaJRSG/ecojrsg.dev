@@ -1,10 +1,4 @@
 {
-  "LayoutBlog": {
-    "authors": "Authors",
-    "lastUpdate": "Last update",
-    "menu": "Menú"
-  },
-
   "Card_Main": {
     "welcome": "Welcome",
     "paragraph": {
@@ -12,6 +6,10 @@
       "partB": "Eco_Jrsg",
       "part2": ", a passionate software engineer student and a diehard lover of computing in its entirety, from the most challenging software to the intricate secrets of hardware operation."
     }
+  },
+
+  "Status": {
+    "status": "WIP"
   },
 
   "About_Card": {
@@ -39,13 +37,11 @@
   },
 
   "Repo_Card": {
-    "title": "Repository",
-    "estatus": "Now WIP"
+    "title": "Repository"
   },
 
   "Blog_Card": {
-    "title": "Blog",
-    "estatus": "Now WIP"
+    "title": "Blog"
   },
 
   "Now_Card": {

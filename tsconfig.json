@@ -9,5 +9,5 @@
     "jsxImportSource": "solid-js",
     "strictNullChecks": true,
     "allowJs": true
-  },
+  }
 }
