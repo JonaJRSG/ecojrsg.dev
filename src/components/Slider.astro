@@ -2,45 +2,44 @@
 ---
 
 <!-- Slider main container -->
-<div class="swiper" style="mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
+<div class="embla" style="mask-image: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%)">
+    <div class="embla__container">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/Astro.svg" alt="" class="w-14 h-16">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/Js.svg" alt="" class="w-14 h-16">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/Ts.svg" alt="" class="w-14 h-16">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/Node.svg" alt="" class="w-14 h-16">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/Python.svg" alt="" class="w-14 h-20">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/Sql.svg" alt="" class="w-14 h-16">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/React.svg" alt="" class="w-14 h-16">
             </div>
         </div>
-        <div class="swiper-slide">
+        <div class="embla__slide">
             <div class="flex justify-center">
                 <img src="/logos/NestJS.svg" alt="" class="w-14 h-16">
             </div>
@@ -49,6 +48,31 @@
 </div>
 
 <script>
+    import EmblaCarousel from 'embla-carousel'
+    import Autoscroll from 'embla-carousel-auto-scroll'
+
+    const emblaList = document.querySelectorAll('.embla')
+
+    emblaList.forEach(embladN => {
+        const options = {
+            loop: true,
+            speed: 10,
+            slidesToScroll: 1,
+            draggable: true,
+            dragFree: true,
+            skipSnaps: false,   
+        }
+        const plugins = [Autoscroll({
+            speed: 1,
+            startDelay: 3000,
+            stopOnInteraction: false,
+        })]
+        const emblaNode = embladN as HTMLElement;
+        EmblaCarousel(emblaNode, options, plugins)
+    });
+</script>
+
+<!-- <script>
     // import Swiper JS
     import Swiper from 'swiper';
     // import Swiper styles
@@ -62,4 +86,4 @@
             delay: 2500,
         },
     });
-</script>
+</script> -->

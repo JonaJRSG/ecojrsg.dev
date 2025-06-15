@@ -21,6 +21,8 @@
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "astro": "^5.9.3",
     "d3": "^7.9.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-auto-scroll": "^8.6.0",
     "motion": "^10.18.0",
     "solid-js": "^1.9.7",
     "swiper": "^11.2.8",
